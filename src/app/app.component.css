@@ -1,0 +1,13 @@
+.jumbotron{
+  padding:10px;
+}
+a{
+  text-decoration: none;
+  color:#dddddd;
+  padding: 10px;
+
+}
+
+a:hover{
+ color:white;
+}

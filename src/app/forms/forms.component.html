@@ -1,0 +1,58 @@
+<div class="container">
+  <form [formGroup]="data">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" name="username" id="username" formControlName="username"
+        placeholder="username">
+      <label for="username" class="form-label">User Name</label>
+
+      <div class="alert" *ngIf="data.controls['username'].hasError('required') && data.controls['username'].touched">
+        User Name required
+      </div>
+
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" name="email" id="email" formControlName="email" placeholder="email">
+      <label for="email" class="form-label">Email</label>
+
+      <div class="alert" *ngIf="data.controls['email'].hasError('required') && data.controls['email'].touched">
+        Email required
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" name="password" id="password" formControlName="password"
+        placeholder="password" autocomplete="on">
+      <p></p>
+      <label for="password" class="form-label">Password</label>
+
+      <input (click)="show()" type="checkbox" class="form-check-input"> Show Password
+
+
+
+      <div class="alert" *ngIf="data.controls['password'].hasError('required') && data.controls['password'].touched">
+        Password required
+
+      </div>
+    </div>
+
+
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" name="cpassword" id="cpassword" formControlName="cpassword"
+        placeholder="cpassword" autocomplete="on">
+      <label for="cpassword" class="form-label">Confirm Password</label>
+
+      <div class="alert" *ngIf="data.controls['cpassword'].hasError('required') && data.controls['cpassword'].touched">
+        Confirm Password
+      </div>
+
+      <div *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not Matching</div>
+    </div>
+
+    <div class="text-center">
+      <button (click)="display()" [disabled]="data.invalid" type="button" class="btn btn-lg btn-success">Submit</button>
+    </div>
+
+  </form>
+</div>
