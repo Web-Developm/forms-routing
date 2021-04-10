@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
 export class FormsComponent implements OnInit {
 
   data!:FormGroup;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder) {
+   }
 
   forms()
   {

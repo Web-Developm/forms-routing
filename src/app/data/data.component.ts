@@ -1,8 +1,9 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { NavigationExtras } from "@angular/router";
 
 @Component({
   selector: 'app-data',
@@ -13,18 +14,48 @@ export class DataComponent implements OnInit {
 
 
 
-  constructor(private route:ActivatedRoute) {
-    const username:Observable<any>=route.params.pipe(map(p =>p.id));
-    const email:Observable<any>=route.params.pipe(map(p =>p.email));
-    const password:Observable<any>=route.params.pipe(map(p => p.password));
-    const cpassword:Observable<any>=route.params.pipe(map(p =>p.cpassword));
+  constructor(private route: ActivatedRoute, private router: Router) {
+  }
 
-    const data=route.data.pipe(map(d=>d.user));
+  info = [
+    {
+      'id': 1,
+      'username': 'Alfreds Futterkiste',
+      'email': 'alfredsfutterkiste@gmail.com',
+      'password': 12345,
+      'confirm': 12345
+    },
+
+    {
+      'id': 2,
+      'username': 'Around the Horn',
+      'email': 'aroundthehorn@gmail.com',
+      'password': 12345,
+      'confirm': 12345
+    },
+
+    {
+      'id': 3,
+      'username': 'Around the Horn',
+      'email': 'aroundthehorn@gmail.com',
+      'password': 12345,
+      'confirm': 12345
+    },
+
+    {
+      'id': 4,
+      'username': 'Alfreds Futterkiste',
+      'email': 'alfredsfutterkiste@gmail.com',
+      'password': 12345,
+      'confirm': 12345
+    },
+  ]
+
+  onSelect(info1: any) {
+    this.router.navigate(['/result', info1.id]);
   }
 
   ngOnInit(): void {
-    //this.route.navigate(["/vav",{'data':data}]);
-
 
   }
 

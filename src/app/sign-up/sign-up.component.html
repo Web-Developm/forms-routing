@@ -1,4 +1,27 @@
 <div class="container">
-  <p>sign-up works!</p>
+  <h5 class="display-5 text-center mb-3">Sign up</h5>
+
+  <form [formGroup]="data1">
+
+    <div class="form-floating mb-3 mt-3">
+      <input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="username">
+      <label for="username">User Name</label>
+    </div>
+
+    <div class="form-floating mb-3 mt-3">
+      <input type="password" class="form-control" name="password" id="password" formControlName="password" placeholder="password" autocomplete="on">
+      <label for="password">Password</label>
+    </div>
+
+    <div class="text-center mt-4">
+      <button [disabled]="data1.invalid" class="btn btn-success">Sign up</button>
+    </div>
+  </form>
+
+  <div class="text-center link mt-4">
+    New to  App? <a routerLink="/forms">Sign in.</a>
+  </div>
+
+
 </div>
 

@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DataComponent } from './data/data.component';
 import { TitleComponent } from './title/title.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     route,
     DataComponent,
     TitleComponent,
-    SignUpComponent
+    SignUpComponent,
+    FormsComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
