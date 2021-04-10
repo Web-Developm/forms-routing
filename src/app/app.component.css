@@ -3,11 +3,12 @@
 }
 a{
   text-decoration: none;
-  color:#dddddd;
+  color: white;
   padding: 10px;
+  font-size: 17px;
 
 }
 
 a:hover{
- color:white;
+ color:#dddddd;
 }

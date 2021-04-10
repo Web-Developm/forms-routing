@@ -24,7 +24,7 @@ export class FormsComponent implements OnInit {
 
   show()
   {
-    let x:any=this.data.controls['password'].value;
+    /*let x:any=this.data.controls['password'].value;
 
     if(x.type === "password")
     {
@@ -32,7 +32,8 @@ export class FormsComponent implements OnInit {
     }
     else{
       x.type="password";
-    }
+    }*/
+
   }
 
   display()
