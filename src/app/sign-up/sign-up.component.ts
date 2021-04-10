@@ -36,8 +36,25 @@ export class SignUpComponent implements OnInit {
       let username = this.base[i].username;
       let password = this.base[i].password;
 
-      if (username == this.data1.controls['username'].value && password == this.data1.controls['password'].value) {
+
+      if (username == this.data1.controls['username'].value && password == this.data1.controls['password'].value ) {
+
+        alert("Login Successfull");
         window.location.assign('http://localhost:4200/data');
+      }
+
+      else if(username !== this.data1.controls['username'].value && password ===this.data1.controls['password'].value)
+      {
+        alert("User Name incorrect")
+      }
+
+      else if(username === this.data1.controls['username'].value && password !==this.data1.controls['password'].value)
+      {
+        alert("Password incorrect");
+      }
+
+      {
+
       }
     }
 
