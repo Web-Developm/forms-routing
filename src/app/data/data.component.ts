@@ -55,6 +55,13 @@ export class DataComponent implements OnInit {
     this.router.navigate(['/result', JSON.stringify(info1)]);
   }
 
+  signout()
+  {
+    alert("Sign Out Successfull");
+
+    this.router.navigate(['/title'], {relativeTo:this.route});
+  }
+
   ngOnInit(): void {
 
   }
