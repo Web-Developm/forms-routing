@@ -39,6 +39,7 @@ export class FormsComponent implements OnInit {
   display()
   {
     console.log(this.data.value);
+    this.data.reset();
 
   }
 

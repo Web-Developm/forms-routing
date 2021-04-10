@@ -48,7 +48,7 @@
         Confirm Password
       </div>
 
-      <div *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not Matching</div>
+      <div class="alert alert-warning" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not Matching</div>
     </div>
 
     <div class="text-center mb-3">
