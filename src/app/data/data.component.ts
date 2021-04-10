@@ -52,7 +52,7 @@ export class DataComponent implements OnInit {
   ]
 
   onSelect(info1: any) {
-    this.router.navigate(['/result', info1.id]);
+    this.router.navigate(['/result', JSON.stringify(info1)]);
   }
 
   ngOnInit(): void {

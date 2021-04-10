@@ -15,11 +15,11 @@ export class ResultComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    let id=this.route.queryParams.subscribe(params=>{
-      this.resultId=params['id'];
+    let id=this.route.params.subscribe((params:any)=>{
+      this.resultId=JSON.parse(params['id']) ;
     });
 
-    this.resultId=id;
+    console.log(this.resultId);
 
   }
 
