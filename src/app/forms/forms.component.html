@@ -46,18 +46,23 @@
 
 
 
-    <div class="form-floating mb-3">
-      <input type="password" class="form-control" name="cpassword" id="cpassword" formControlName="cpassword"
+    <div class="input-group form-floating mb-3">
+      <input [type]="confirmpassword ? 'text' : 'password'" class="form-control" name="cpassword" id="cpassword" formControlName="cpassword"
         placeholder="cpassword" autocomplete="on">
       <label for="cpassword" class="form-label">Confirm Password</label>
+
+     <span class="input-group-text" id="cpassword">
+       <i class="far"
+       [ngClass]="{'fa-eye-slash': !confirmpassword, 'fa-eye':confirmpassword}" (click)="show1()"></i>
+     </span>
 
       <div class="alert" *ngIf="data.controls['cpassword'].hasError('required') && data.controls['cpassword'].touched">
         Confirm Password
       </div>
-
-      <div class="alert alert-warning" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not
-        Matching</div>
     </div>
+
+    <div class="alert alert-warning" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not
+        Matching</div>
 
     <div class="text-center mb-3">
       <button (click)="display()" [disabled]="data.invalid" type="button" class="btn btn-lg btn-success">Create

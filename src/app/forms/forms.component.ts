@@ -13,6 +13,7 @@ export class FormsComponent implements OnInit {
   data!:FormGroup;
 
   showpassword!:boolean;
+  confirmpassword!:boolean;
 
   constructor(private fb:FormBuilder) {
    }
@@ -30,6 +31,11 @@ export class FormsComponent implements OnInit {
   show()
   {
     this.showpassword=!this.showpassword;
+  }
+
+  show1()
+  {
+    this.confirmpassword=!this.confirmpassword;
   }
 
   display()
