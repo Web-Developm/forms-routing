@@ -11,6 +11,9 @@ import {ActivatedRoute} from '@angular/router';
 export class FormsComponent implements OnInit {
 
   data!:FormGroup;
+
+  showpassword!:boolean;
+
   constructor(private fb:FormBuilder) {
    }
 
@@ -26,16 +29,7 @@ export class FormsComponent implements OnInit {
 
   show()
   {
-    /*let x:any=this.data.controls['password'].value;
-
-    if(x.type === "password")
-    {
-      x.type="text"
-    }
-    else{
-      x.type="password";
-    }*/
-
+    this.showpassword=!this.showpassword;
   }
 
   display()

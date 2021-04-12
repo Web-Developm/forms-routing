@@ -21,13 +21,20 @@
       </div>
     </div>
 
-    <div class="form-floating mb-3">
-      <input type="password" class="form-control" name="password" id="password" formControlName="password"
+    <div class="input-group  form-floating mb-3">
+      <input [type]="showpassword ? 'text' : 'password'"  class="form-control" name="password" id="password" formControlName="password"
         placeholder="password" autocomplete="on">
       <p></p>
       <label for="password" class="form-label">Password</label>
 
-      <input (click)="show()" type="checkbox" class="form-check-input"> Show Password
+      <span class="input-group-text" id="password">
+        <i class="far"
+        [ngClass]="{'fa-eye-slash': !showpassword, 'fa-eye':showpassword}" (click)="show()" ></i>
+      </span>
+
+      <!--<input (click)="show()" type="checkbox" class="form-check-input"> Show Password-->
+
+
 
 
 
